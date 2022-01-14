@@ -29,12 +29,14 @@ namespace Game.Editor.Utilities
 
         #region Private Methods
         
+        /// <summary>
+        /// Instantiates a GameObject containing a GameManager component
+        /// </summary>
         private static void InstantiateGameManager()
         {
             if (Object.FindObjectOfType<GameManager>() != null) return;
             GameObject gameManager = new GameObject("Game Manager");
             gameManager.AddComponent<GameManager>();
-            Debug.Log(gameManager);
             Debug.Log("<b>BootstrapSurrogate:</b> GameManager created");
         }
 
