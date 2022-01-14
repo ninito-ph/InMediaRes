@@ -1,21 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-namespace Game
+namespace Game.Core
 {
-    public class GameManager : MonoBehaviour
+    /// <summary>
+    /// A class that manages
+    /// </summary>
+    public sealed class GameManager : Ninito.UsualSuspects.Common.Singleton.GameManager
     {
-        // Start is called before the first frame update
-        void Start()
+        public override void LoadScene(string sceneName)
         {
-        
+            LoadingScreenManager.LoadScene(sceneName);
+            base.LoadScene("SA_LoadingScreen");
         }
 
-        // Update is called once per frame
-        void Update()
+        public override void QuitApplication()
         {
-        
+            base.QuitApplication();
         }
     }
 }
